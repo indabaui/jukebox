@@ -1,34 +1,9 @@
 var page = require('page')
 var agent = require('agent')
-var bus = require('bus')
-var Player = require('player')
-var SubmissionRow = require('submission-row')
 var OpportunityRow = require('opportunity-row')
+var OpportunityView = require('opportunity-view')
 
-require('SoundManager2')
-soundManager.setup({
-  url: '/swf',
-  debugMode: false
-});
-
-var sound, player;
-
-bus.on('play submission', function(submission) {
-  if (sound) {
-    sound.destruct()
-  }
-  sound = soundManager.createSound({
-    id: submission.id,
-    url: submission.preview_url,
-  });
-  player = new Player(sound);
-  player.setWaveformUrl(submission.waveform_url);
-  player.indabaStyle();
-  player.play();
-  PlayerContainer.innerHTML = "";
-  PlayerContainer.appendChild(player.el[0]);
-});
-
+require('./playback.js')
 
 page('/opportunities', function(req) {
   Stage.innerHTML = "";
@@ -44,14 +19,11 @@ page('/opportunities', function(req) {
 page('/opportunities/:slug', function(req) {
   Stage.innerHTML = "";
   agent.inGet(req.path, function(err, opp) {
-    console.log(err, opp);
-  })
-  agent.inGet(req.path + '/submissions', function(err, data) {
-    data.forEach(function(submission) {
-      var submissionRow = new SubmissionRow(submission);
-      Stage.appendChild(submissionRow.el);
-    });
+    var view = new OpportunityView(opp);
+    Stage.appendChild(view.el);
   })
 })
 
 page()
+
+

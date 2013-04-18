@@ -10,11 +10,13 @@
   },
   "development": {},
   "scripts": [
-    "index.js"
+    "index.js",
+    "playback.js"
   ],
   "local": [
     "submission-row",
-    "opportunity-row"
+    "opportunity-row",
+    "opportunity-view"
   ],
   "styles": [
     "app.css"

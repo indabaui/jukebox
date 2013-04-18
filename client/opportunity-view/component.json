@@ -1,0 +1,21 @@
+{
+  "name": "opportunity-view",
+  "description": "Opportunity View",
+  "dependencies": {
+    "component/bus": "*",
+    "component/domify": "*",
+    "component/view": "*",
+    "indabaui/agent": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "opportunity-view.css"
+  ],
+  "local": [
+    "submission-row"
+  ]
+}
