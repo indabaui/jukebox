@@ -1,1 +1,1 @@
-module.exports = '<div class="submissionItem media">\n  <div class="img">\n    <img data-src="img">\n  </div>\n  <div class="bd">\n    <div class="name" data-text="name"></div>\n    <div data-text="artist"></div>\n  </div>\n</div>\n\n';
+module.exports = '<div class="submissionItem">\n  <div class="img">\n    <img data-src="img">\n  </div>\n  <div class="data">\n    <div class="name" data-text="name"></div>\n    <div data-text="artist"></div>\n  </div>\n</div>\n\n';

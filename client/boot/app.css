@@ -11,3 +11,13 @@ body {
   right: 0;
   background: #ccc;
 }
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+

@@ -23,7 +23,7 @@ SubmissionItem.prototype.onPlaySubmission = function(submission) {
 }
 
 SubmissionItem.prototype.img = function() {
-  return this.obj.user.image_urls.detail;
+  return this.obj.user.image_urls.profile;
 }
 
 SubmissionItem.prototype.artist = function() {

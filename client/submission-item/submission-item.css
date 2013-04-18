@@ -1,23 +1,35 @@
 .submissionItem {
-  border-bottom: 1px solid #ccc;
-  padding: 15px;
+  position: relative;
+  border: 1px solid #ccc;
   cursor: pointer;
   background: whitesmoke;
-  border-left: 5px solid transparent;
+  border: 2px solid transparent;
+  float: left;
+  margin: 20px;
+  width: 220px;
+  height: 220px;
+}
+.submissionItem .data {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  color: whitesmoke;
 }
 
 .submissionItem:hover {
-  border-left: 5px solid #ccc;
+  border: 2px solid #ccc;
 }
 
 .submissionItem.playing {
-  border-left: 5px solid black;
+  border: 2px solid black;
   background: white;
 }
 
-.media { }
-.media, .bd {overflow:hidden; _overflow:visible; zoom:1;}
-.media .img {float:left; margin-right: 10px;}
-.media .img img {display:block;}
+/*.media { }*/
+/*.media, .bd {overflow:hidden; _overflow:visible; zoom:1;}*/
+/*.media .img {float:left; margin-right: 10px;}*/
+/*.media .img img {display:block;}*/
 
 
