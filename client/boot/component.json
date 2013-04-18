@@ -13,7 +13,8 @@
     "index.js"
   ],
   "local": [
-    "submission-row"
+    "submission-row",
+    "opportunity-row"
   ],
   "styles": [
     "app.css"

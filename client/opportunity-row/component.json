@@ -1,0 +1,17 @@
+{
+  "name": "opportunity-row",
+  "description": "Opportunity Row",
+  "dependencies": {
+    "component/bus": "*",
+    "component/domify": "*",
+    "component/view": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "opportunity-row.css"
+  ]
+}

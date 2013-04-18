@@ -1,8 +1,9 @@
 var page = require('page')
 var agent = require('agent')
-var SubmissionRow = require('submission-row')
 var bus = require('bus')
 var Player = require('player')
+var SubmissionRow = require('submission-row')
+var OpportunityRow = require('opportunity-row')
 
 require('SoundManager2')
 soundManager.setup({
@@ -28,14 +29,27 @@ bus.on('play submission', function(submission) {
   PlayerContainer.appendChild(player.el[0]);
 });
 
+
+page('/opportunities', function(req) {
+  Stage.innerHTML = "";
+  agent.inGetAll(req.path, function(err, data) {
+    data.forEach(function(datum) {
+      var row = new OpportunityRow(datum);
+      Stage.appendChild(row.el);
+    });
+  })
+});
+
+
 page('/opportunities/:slug', function(req) {
+  Stage.innerHTML = "";
   agent.inGet(req.path, function(err, opp) {
     console.log(err, opp);
   })
   agent.inGet(req.path + '/submissions', function(err, data) {
     data.forEach(function(submission) {
       var submissionRow = new SubmissionRow(submission);
-      document.body.appendChild(submissionRow.el);
+      Stage.appendChild(submissionRow.el);
     });
   })
 })
