@@ -1,4 +1,4 @@
-.submissionRow {
+.submissionItem {
   border-bottom: 1px solid #ccc;
   padding: 15px;
   cursor: pointer;
@@ -6,11 +6,11 @@
   border-left: 5px solid transparent;
 }
 
-.submissionRow:hover {
+.submissionItem:hover {
   border-left: 5px solid #ccc;
 }
 
-.submissionRow.playing {
+.submissionItem.playing {
   border-left: 5px solid black;
   background: white;
 }

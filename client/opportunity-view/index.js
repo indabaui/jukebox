@@ -3,7 +3,7 @@ var domify = require('domify')
   , View = require('view')
   , bus = require('bus')
   , agent = require('agent')
-  , SubmissionRow = require('submission-row')
+  , SubmissionItem = require('submission-item')
 
 module.exports = OpportunityView;
 
@@ -23,8 +23,8 @@ OpportunityView.prototype.more = function() {
   var self = this;
   agent.inGet('/opportunities/' + this.obj.slug + '/submissions', {offset: self.submissions.length}, function(err, data) {
     data.forEach(function(submission) {
-      var submissionRow = new SubmissionRow(submission);
-      self.submissionsEl.appendChild(submissionRow.el);
+      var submissionItem = new SubmissionItem(submission);
+      self.submissionsEl.appendChild(submissionItem.el);
       self.submissions.push(submission)
     });
   })

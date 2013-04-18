@@ -1,5 +1,5 @@
 {
-  "name": "submission-row",
+  "name": "submission-item",
   "description": "a submission row",
   "dependencies": {
     "component/bus": "*",
@@ -12,6 +12,6 @@
     "template.js"
   ],
   "styles": [
-    "submission-row.css"
+    "submission-item.css"
   ]
 }

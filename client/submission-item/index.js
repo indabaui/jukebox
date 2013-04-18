@@ -3,30 +3,30 @@ var domify = require('domify')
   , View = require('view')
   , bus = require('bus')
 
-module.exports = SubmissionRow;
+module.exports = SubmissionItem;
 
-function SubmissionRow(submission) {
+function SubmissionItem(submission) {
   View.call(this, submission, tmpl.cloneNode(true))
   this.el.addEventListener('click', this.play.bind(this));
   bus.on('play submission', this.onPlaySubmission.bind(this));
 }
 
-SubmissionRow.prototype.play = function() {
+SubmissionItem.prototype.play = function() {
   bus.emit('play submission', this.obj);
 }
 
-SubmissionRow.prototype.onPlaySubmission = function(submission) {
+SubmissionItem.prototype.onPlaySubmission = function(submission) {
   this.el.classList.remove('playing');
   if (submission.id === this.obj.id) {
     this.el.classList.add('playing');
   }
 }
 
-SubmissionRow.prototype.img = function() {
+SubmissionItem.prototype.img = function() {
   return this.obj.user.image_urls.detail;
 }
 
-SubmissionRow.prototype.artist = function() {
+SubmissionItem.prototype.artist = function() {
   return this.obj.user.name;
 }
 

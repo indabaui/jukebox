@@ -16,6 +16,6 @@
     "opportunity-view.css"
   ],
   "local": [
-    "submission-row"
+    "submission-item"
   ]
 }
