@@ -14,7 +14,7 @@
     "playback.js"
   ],
   "local": [
-    "opportunity-row",
+    "opportunity-item",
     "opportunity-view"
   ],
   "styles": [

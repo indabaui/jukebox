@@ -1,6 +1,6 @@
 {
-  "name": "opportunity-row",
-  "description": "Opportunity Row",
+  "name": "opportunity-item",
+  "description": "Opportunity Item",
   "dependencies": {
     "component/bus": "*",
     "component/domify": "*",
@@ -12,6 +12,6 @@
     "template.js"
   ],
   "styles": [
-    "opportunity-row.css"
+    "opportunity-item.css"
   ]
 }

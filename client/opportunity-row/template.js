@@ -1,1 +1,0 @@
-module.exports = '<div class="media opportunity-row">\n<a data-href="href">\n  <div class="img">\n    <img data-src="tileImg">\n  </div>\n  <div class="bd">\n    <b data-text="name"></b>\n  </div>\n</a>\n</div>\n';
