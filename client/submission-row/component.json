@@ -1,0 +1,17 @@
+{
+  "name": "submission-row",
+  "description": "a submission row",
+  "dependencies": {
+    "component/bus": "*",
+    "component/domify": "*",
+    "component/view": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "submission-row.css"
+  ]
+}

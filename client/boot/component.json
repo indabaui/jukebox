@@ -1,0 +1,21 @@
+{
+  "name": "boot",
+  "description": "router",
+  "dependencies": {
+    "component/bus": "*",
+    "visionmedia/page.js": "*",
+    "indabaui/SoundManager2": "*",
+    "indabaui/player": "*",
+    "indabaui/agent": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js"
+  ],
+  "local": [
+    "submission-row"
+  ],
+  "styles": [
+    "app.css"
+  ]
+}

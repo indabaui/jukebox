@@ -1,0 +1,17 @@
+{
+  "name": "jukebox",
+  "version": "0.0.0",
+  "description": "a jukebox demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "Readme.md",
+  "dependencies": {
+    "express": "~3.2.0"
+  }
+}

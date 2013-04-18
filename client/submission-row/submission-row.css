@@ -1,0 +1,17 @@
+.submissionRow {
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+  cursor: pointer;
+  background: whitesmoke;
+}
+
+.submissionRow.playing {
+  background: white;
+}
+
+.media { }
+.media, .bd {overflow:hidden; _overflow:visible; zoom:1;}
+.media .img {float:left; margin-right: 10px;}
+.media .img img {display:block;}
+
+
