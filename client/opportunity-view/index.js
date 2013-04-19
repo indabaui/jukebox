@@ -7,6 +7,7 @@ var domify = require('domify')
   , SubmissionItem = require('submission-item')
   , Emitter = require('emitter')
   , throttle = require('throttle')
+  , query = require('query')
 
 module.exports = OpportunityView;
 
@@ -17,15 +18,26 @@ function OpportunityView(opportunity) {
   this.submissionsEl = this.el.querySelector('.submissions')
   this.more()
   this.submissionsContainer = this.el.querySelector('.submissions-container')
-  this.submissionsContainer.addEventListener('mousemove', this.onMouseMove.bind(this))
-  this.submissionsContainer.addEventListener('mouseout', this.onMouseMove.bind(this))
   this.submissionsContainer.addEventListener('scroll', this.onSubmissionsScroll.bind(this))
 
-  this.counter = 0;
+  var scrollDirection = 0;
+  query('.scroll-left', this.el).addEventListener('mouseover', function() {
+    scrollDirection = -1;
+  });
+  query('.scroll-left', this.el).addEventListener('mouseout', function() {
+    scrollDirection = 0;
+  });
+  query('.scroll-right', this.el).addEventListener('mouseover', function() {
+    scrollDirection = 1;
+  });
+  query('.scroll-right', this.el).addEventListener('mouseout', function() {
+    scrollDirection = 0;
+  });
+
   var doScroll = function() {
-    if (this.power !== 0 && this.counter < 10) {
-      this.counter += 1;
-      this.submissionsContainer.scrollLeft = this.submissionsContainer.scrollLeft + (this.power / 30)
+    if (scrollDirection !== 0) {
+      console.log(scrollDirection);
+      this.submissionsContainer.scrollLeft += 15 * scrollDirection;
     }
     requestAnimationFrame(doScroll);
   }.bind(this)
@@ -36,19 +48,13 @@ OpportunityView.prototype.artworkImg = function() {
   return this.obj.image_urls.large_background_image;
 }
 
-OpportunityView.prototype.onMouseMove = throttle(function(ev) {
-  var container = this.submissionsContainer;
-  var newPower = ev.clientX - (container.clientWidth / 2)
-  if (Math.abs(newPower) < container.clientWidth / 10) {
-    this.power = 0
-    return
-  }
-  this.power = newPower;
-  this.counter = 0;
-}, 100);
-
 OpportunityView.prototype.onSubmissionsScroll = throttle(function(ev) {
   var container = this.submissionsContainer;
+  if (container.scrollLeft < 100) {
+    query('.scroll-left', this.el).style.display = "none";
+  } else {
+    query('.scroll-left', this.el).style.display = "block";
+  }
   if (container.scrollWidth - container.scrollLeft < container.clientWidth * 2) {
     this.more();
   }

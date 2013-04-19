@@ -20,7 +20,30 @@
   max-width: 150%;
 }
 
+.scroll-left, .scroll-right {
+  z-index: 2;
+  position: fixed;
+  width: 80px;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  color: white;
+  text-align: center;
+  line-height: 220px;
+  font-size: 28px;
+}
+.scroll-left {
+  left: 0;
+  display: none;
+  cursor: w-resize;
+  border-right: 2px solid black;
+}
+.scroll-right {
+  right: 0;
+  cursor: e-resize;
+  border-left: 2px solid black;
+}
 .submissions-container {
+  z-index: 1;
   background: rgba(0,0,0,0.5);
   position: fixed;
   bottom: 0;
@@ -28,7 +51,6 @@
   right: 0;
   height: 230px;
   overflow: auto;
-  z-index: 2;
 }
 .submissions {
   width: 99999px;
