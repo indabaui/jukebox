@@ -5,6 +5,7 @@ var domify = require('domify')
   , agent = require('agent')
   , SubmissionItem = require('submission-item')
   , Emitter = require('emitter')
+  , throttle = require('throttle')
 
 module.exports = OpportunityView;
 
@@ -14,21 +15,29 @@ function OpportunityView(opportunity) {
   this.submissions = []
   this.submissionsEl = this.el.querySelector('.submissions')
   this.more()
-  this.el
-    .querySelector('.submissions-container')
-    .addEventListener('scroll', this.onScrollSubmissions.bind(this))
+  this.submissionsContainer = this.el.querySelector('.submissions-container')
+  this.submissionsContainer.addEventListener('mousemove', this.onMouseMove.bind(this))
+  this.submissionsContainer.addEventListener('mouseout', this.onMouseMove.bind(this))
+  this.submissionsContainer.addEventListener('scroll', this.onSubmissionsScroll.bind(this))
 }
 
 OpportunityView.prototype.artworkImg = function() {
   return this.obj.image_urls.large_background_image;
 }
 
-OpportunityView.prototype.onScrollSubmissions = function(ev) {
-  var container = ev.srcElement;
+OpportunityView.prototype.onMouseMove = throttle(function(ev) {
+  var container = this.submissionsContainer;
+  var power = ev.clientX - (container.clientWidth / 2)
+  console.log(power)
+  container.scrollLeft = container.scrollLeft + (power / 10)
+}, 50);
+
+OpportunityView.prototype.onSubmissionsScroll = throttle(function(ev) {
+  var container = this.submissionsContainer;
   if (container.scrollWidth - container.scrollLeft < container.clientWidth * 2) {
     this.more();
   }
-}
+}, 100);
 
 OpportunityView.prototype.more = function() {
   var self = this;
@@ -50,3 +59,4 @@ OpportunityView.prototype.more = function() {
   })
 }
 
+/*jshint newcap: false */

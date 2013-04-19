@@ -6,6 +6,7 @@
     "component/emitter": "*",
     "component/domify": "*",
     "component/view": "*",
+    "component/throttle": "*",
     "indabaui/agent": "*"
   },
   "development": {},
