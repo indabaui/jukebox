@@ -8,7 +8,13 @@
   <div class="artwork">
     <img data-src="artworkImg">
   </div>
-  <div class="submissions clearfix"></div>
 
-  <div class="more" on-click="more">More</div>
+  <div class="more" data-show="loadingSubmissions">Loading</div>
+  <div class="more" data-show="noMoreSubmissions">No More</div>
+
+  <div class="submissions-container">
+    <div class="submissions">
+    </div>
+  </div>
+
 </div>

@@ -3,6 +3,7 @@
   "description": "Opportunity View",
   "dependencies": {
     "component/bus": "*",
+    "component/emitter": "*",
     "component/domify": "*",
     "component/view": "*",
     "indabaui/agent": "*"

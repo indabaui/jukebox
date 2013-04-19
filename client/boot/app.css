@@ -12,6 +12,8 @@ body {
   background: #ccc;
 }
 
+// basestyles
+
 .clearfix:before,
 .clearfix:after {
     content: " ";
@@ -21,3 +23,7 @@ body {
     clear: both;
 }
 
+
+.hide {
+  display: none;
+}

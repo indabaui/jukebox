@@ -5,9 +5,12 @@
   background: whitesmoke;
   border: 2px solid transparent;
   float: left;
-  margin: 20px;
   width: 220px;
   height: 220px;
+}
+.submissionItem .img img {
+  width: 100%;
+  height: 100%;
 }
 .submissionItem .data {
   position: absolute;
