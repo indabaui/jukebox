@@ -3,7 +3,7 @@
   "description": "router",
   "dependencies": {
     "component/bus": "*",
-    "visionmedia/page.js": "*",
+    "component/router": "*",
     "indabaui/SoundManager2": "*",
     "indabaui/player": "*",
     "indabaui/agent": "*"

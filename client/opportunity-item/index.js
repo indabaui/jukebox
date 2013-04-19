@@ -15,7 +15,7 @@ OpportunityItem.prototype.onclick = function(ev) {
 }
 
 OpportunityItem.prototype.href = function() {
-  return '/opportunities/' + this.obj.slug;
+  return '#/opportunities/' + this.obj.slug;
 }
 
 OpportunityItem.prototype.tileImg = function() {
