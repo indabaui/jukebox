@@ -1,0 +1,213 @@
+.player {
+  font: 14px Helvetica;
+}
+.player.playing {
+}
+.player.paused {
+}
+
+
+.player .progress-bar {
+  position: relative;
+  background: #555;
+  height: 100px;
+}
+.player .load-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #222;
+}
+.player .play-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: magenta;
+}
+.player img.waveform {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.player .toggle-pause-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  background: whitesmoke;
+  text-align: center;
+  cursor: pointer;
+}
+.player .sound-position {
+  float: right;
+}
+
+
+.indaba-player {
+  position: relative;
+  border: 2px solid black;
+}
+.indaba-player .toggle-pause-button,
+.indaba-player .sound-position {
+  position: absolute;
+  bottom: 0;
+  background: black;
+  color: white;
+  z-index: 5;
+}
+.indaba-player .toggle-pause-button {
+  left: 0;
+}
+.indaba-player .sound-position {
+  right: 0;
+}
+.indaba-player .load-progress {
+  background: #333;
+  box-shadow: inset 0 0 24px black;
+}
+.indaba-player .play-progress {
+  background: transparent;
+  border-right: 2px solid red;
+  z-index: 3;
+}
+
+
+
+
+
+
+
+
+
+a.opportunityRow {
+  display: block;
+}
+
+
+
+.submissionItem {
+  position: relative;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border: 2px solid transparent;
+  float: left;
+  width: 220px;
+  height: 220px;
+}
+.submissionItem .img img {
+  width: 100%;
+  height: 100%;
+}
+.submissionItem .data {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  color: whitesmoke;
+}
+
+.submissionItem:hover {
+  border: 2px solid #ccc;
+}
+
+.submissionItem.playing {
+  border: 2px solid blue;
+  background: white;
+}
+
+/*.media { }*/
+/*.media, .bd {overflow:hidden; _overflow:visible; zoom:1;}*/
+/*.media .img {float:left; margin-right: 10px;}*/
+/*.media .img img {display:block;}*/
+
+
+
+.opportunity-view {
+  width: 100%;
+  height: 100%;
+}
+.left-column, .right-column {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+}
+.left-column {
+  left: 0;
+}
+.right-column {
+  right: 0;
+  background: black;
+}
+
+.artworkImg {
+  max-width: 150%;
+}
+
+.scroll-left, .scroll-right {
+  z-index: 2;
+  position: fixed;
+  width: 80px;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  color: white;
+  text-align: center;
+  line-height: 220px;
+  font-size: 28px;
+}
+.scroll-left {
+  left: 0;
+  display: none;
+  cursor: w-resize;
+  border-right: 2px solid black;
+}
+.scroll-right {
+  right: 0;
+  cursor: e-resize;
+  border-left: 2px solid black;
+}
+.submissions-container {
+  z-index: 1;
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 230px;
+  overflow: auto;
+}
+.submissions {
+  width: 99999px;
+}
+
+html, body, #Stage {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font: 15px/1.6 "Helvetica Nueue", Helvetica;
+  padding-bottom: 150px;
+}
+
+// basestyles
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+
+.hide {
+  display: none;
+}
