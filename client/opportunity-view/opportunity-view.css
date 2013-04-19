@@ -52,6 +52,9 @@
   height: 230px;
   overflow: auto;
 }
+.submissions-container::-webkit-scrollbar { 
+  display: none; 
+}
 .submissions {
   width: 99999px;
 }
