@@ -1,3 +1,4 @@
+/*jshint newcap: false */
 var domify = require('domify')
   , tmpl = domify(require('./template'))[0]
   , View = require('view')
@@ -11,7 +12,7 @@ module.exports = OpportunityView;
 
 function OpportunityView(opportunity) {
   View.call(this, Emitter(opportunity), tmpl.cloneNode(true))
-  this.el.querySelector('.artwork').style.backgroundColor = '#' + opportunity.background_color;
+  this.el.style.backgroundColor = '#' + opportunity.background_color;
   this.submissions = []
   this.submissionsEl = this.el.querySelector('.submissions')
   this.more()
@@ -73,4 +74,3 @@ OpportunityView.prototype.more = function() {
   })
 }
 
-/*jshint newcap: false */

@@ -16,7 +16,9 @@ bus.on('play submission', function(submission) {
   player.setWaveformUrl(submission.waveform_url);
   player.indabaStyle();
   player.play();
-  PlayerContainer.innerHTML = "";
-  PlayerContainer.appendChild(player.el[0]);
+  if (PlayerContainer) {
+    PlayerContainer.innerHTML = "";
+    PlayerContainer.appendChild(player.el[0]);
+  }
 });
 
