@@ -1,12 +1,7 @@
 var Player = require('player')
 var bus = require('bus')
 
-require('SoundManager2')
-soundManager.setup({
-  url: '/swf',
-  debugMode: false
-});
-
+var sm2 = require('SoundManager2')
 var sound, player;
 
 bus.on('play submission', function(submission) {

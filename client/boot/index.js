@@ -5,6 +5,11 @@ var OpportunityView = require('opportunity-view')
 
 require('./playback.js')
 
+page('', function(req) {
+  console.log('home')
+  window.location.pathname = '/opportunities'
+})
+
 page('/opportunities', function(req) {
   Stage.innerHTML = "";
   agent.inGetAll(req.path, function(err, data) {
