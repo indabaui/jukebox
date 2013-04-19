@@ -181,6 +181,9 @@ a.opportunityRow {
   height: 230px;
   overflow: auto;
 }
+.submissions-container::-webkit-scrollbar { 
+  display: none; 
+}
 .submissions {
   width: 99999px;
 }
@@ -193,7 +196,6 @@ body {
   margin: 0;
   padding: 0;
   font: 15px/1.6 "Helvetica Nueue", Helvetica;
-  padding-bottom: 150px;
 }
 
 // basestyles

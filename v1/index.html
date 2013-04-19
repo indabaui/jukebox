@@ -12,12 +12,12 @@
     <script src="build.js"></script>
     <script>
       require('boot');
-
-soundManager.setup({
-  url: '/jukebox/indabaui-SoundManager2/swf',
-  debugMode: false
-});
-
+      if (window.location.host === "indabaui.github.io") {
+        soundManager.setup({
+          url: '/jukebox/indabaui-SoundManager2/swf',
+          debugMode: false
+        });
+      }
     </script>
 
   </body>
