@@ -19,6 +19,16 @@ function OpportunityView(opportunity) {
   this.submissionsContainer.addEventListener('mousemove', this.onMouseMove.bind(this))
   this.submissionsContainer.addEventListener('mouseout', this.onMouseMove.bind(this))
   this.submissionsContainer.addEventListener('scroll', this.onSubmissionsScroll.bind(this))
+
+  this.counter = 0;
+  var doScroll = function() {
+    if (this.power !== 0 && this.counter < 10) {
+      this.counter += 1;
+      this.submissionsContainer.scrollLeft = this.submissionsContainer.scrollLeft + (this.power / 30)
+    }
+    requestAnimationFrame(doScroll);
+  }.bind(this)
+  requestAnimationFrame(doScroll);
 }
 
 OpportunityView.prototype.artworkImg = function() {
@@ -27,10 +37,14 @@ OpportunityView.prototype.artworkImg = function() {
 
 OpportunityView.prototype.onMouseMove = throttle(function(ev) {
   var container = this.submissionsContainer;
-  var power = ev.clientX - (container.clientWidth / 2)
-  console.log(power)
-  container.scrollLeft = container.scrollLeft + (power / 10)
-}, 50);
+  var newPower = ev.clientX - (container.clientWidth / 2)
+  if (Math.abs(newPower) < container.clientWidth / 10) {
+    this.power = 0
+    return
+  }
+  this.power = newPower;
+  this.counter = 0;
+}, 100);
 
 OpportunityView.prototype.onSubmissionsScroll = throttle(function(ev) {
   var container = this.submissionsContainer;
