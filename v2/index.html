@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>jukebox</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="build.css">
+  </head>
+  <body>
+
+    <div id="Stage"></div>
+
+    <script src="build.js"></script>
+    <script>
+      require('boot');
+      if (window.location.host === "indabaui.github.io") {
+        soundManager.setup({
+          url: '/jukebox/indabaui-SoundManager2/swf',
+          debugMode: false
+        });
+      }
+    </script>
+
+  </body>
+</html>
