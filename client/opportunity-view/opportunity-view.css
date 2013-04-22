@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 230px;
+  left: 242px;
 }
 
 .artworkImg {
@@ -20,15 +20,26 @@
 }
 
 .submissions-container {
+  box-sizing: border-box;
   z-index: 1;
   background: rgba(0,0,0,0.5);
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 230px;
-  overflow: auto;
+  width: 238px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
+
+.submissions-container::-webkit-scrollbar{width:9px;height:9px;}
+.submissions-container::-webkit-scrollbar-button:start:decrement,
+.submissions-container::-webkit-scrollbar-button:end:increment{display:block;height:0;background-color:transparent;}
+.submissions-container::-webkit-scrollbar-track-piece{background-color:#111; }
+.submissions-container::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#999;}
+.submissions-container::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#999;}
+
 .submissions-container .submissionItem {
   margin-left: 3px;
 }
