@@ -20,28 +20,6 @@ function OpportunityView(opportunity) {
   this.submissionsContainer = this.el.querySelector('.submissions-container')
   this.submissionsContainer.addEventListener('scroll', this.onSubmissionsScroll.bind(this))
 
-  var scrollDirection = 0;
-  query('.scroll-left', this.el).addEventListener('mouseover', function() {
-    scrollDirection = -1;
-  });
-  query('.scroll-left', this.el).addEventListener('mouseout', function() {
-    scrollDirection = 0;
-  });
-  query('.scroll-right', this.el).addEventListener('mouseover', function() {
-    scrollDirection = 1;
-  });
-  query('.scroll-right', this.el).addEventListener('mouseout', function() {
-    scrollDirection = 0;
-  });
-
-  var doScroll = function() {
-    if (scrollDirection !== 0) {
-      console.log(scrollDirection);
-      this.submissionsContainer.scrollLeft += 15 * scrollDirection;
-    }
-    requestAnimationFrame(doScroll);
-  }.bind(this)
-  requestAnimationFrame(doScroll);
 }
 
 OpportunityView.prototype.artworkImg = function() {
@@ -50,12 +28,7 @@ OpportunityView.prototype.artworkImg = function() {
 
 OpportunityView.prototype.onSubmissionsScroll = throttle(function(ev) {
   var container = this.submissionsContainer;
-  if (container.scrollLeft < 100) {
-    query('.scroll-left', this.el).style.display = "none";
-  } else {
-    query('.scroll-left', this.el).style.display = "block";
-  }
-  if (container.scrollWidth - container.scrollLeft < container.clientWidth * 2) {
+  if (container.scrollHeight - container.scrollTop < container.clientHeight * 2) {
     this.more();
   }
 }, 100);

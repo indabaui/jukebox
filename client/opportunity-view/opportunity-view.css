@@ -2,59 +2,33 @@
   width: 100%;
   height: 100%;
 }
-.left-column, .right-column {
+.left-column {
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 50%;
-}
-.left-column {
-  left: 0;
-}
-.right-column {
-  right: 0;
-  background: black;
+  left: 230px;
 }
 
 .artworkImg {
   max-width: 150%;
 }
+#PlayerContainer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
 
-.scroll-left, .scroll-right {
-  z-index: 2;
-  position: fixed;
-  width: 80px;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  color: white;
-  text-align: center;
-  line-height: 220px;
-  font-size: 28px;
-}
-.scroll-left {
-  left: 0;
-  display: none;
-  cursor: w-resize;
-  border-right: 2px solid black;
-}
-.scroll-right {
-  right: 0;
-  cursor: e-resize;
-  border-left: 2px solid black;
-}
 .submissions-container {
   z-index: 1;
   background: rgba(0,0,0,0.5);
   position: fixed;
+  top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  height: 230px;
+  width: 230px;
   overflow: auto;
 }
-.submissions-container::-webkit-scrollbar { 
-  display: none; 
-}
-.submissions {
-  width: 99999px;
+.submissions-container .submissionItem {
+  margin-left: 3px;
 }

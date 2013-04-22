@@ -3,7 +3,6 @@
   border: 1px solid #ccc;
   cursor: pointer;
   border: 2px solid transparent;
-  float: left;
   width: 220px;
   height: 220px;
 }
@@ -25,7 +24,7 @@
 }
 
 .submissionItem.playing {
-  border: 2px solid blue;
+  border: 2px solid #0083CB;
   background: white;
 }
 
