@@ -1,0 +1,187 @@
+.player {
+  font: 14px Helvetica;
+}
+.player.playing {
+}
+.player.paused {
+}
+
+
+.player .progress-bar {
+  position: relative;
+  background: #555;
+  height: 100px;
+}
+.player .load-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #222;
+}
+.player .play-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: magenta;
+}
+.player img.waveform {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.player .toggle-pause-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  background: whitesmoke;
+  text-align: center;
+  cursor: pointer;
+}
+.player .sound-position {
+  float: right;
+}
+
+
+.indaba-player {
+  position: relative;
+  border: 2px solid black;
+}
+.indaba-player .toggle-pause-button,
+.indaba-player .sound-position {
+  position: absolute;
+  bottom: 0;
+  background: black;
+  color: white;
+  z-index: 5;
+}
+.indaba-player .toggle-pause-button {
+  left: 0;
+}
+.indaba-player .sound-position {
+  right: 0;
+}
+.indaba-player .load-progress {
+  background: #111;
+}
+.indaba-player .play-progress {
+  background: transparent;
+  border-right: 2px solid red;
+  z-index: 3;
+}
+
+
+
+
+
+
+
+
+
+a.opportunityRow {
+  display: block;
+}
+
+
+
+.submissionItem {
+  position: relative;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border: 2px solid transparent;
+  width: 220px;
+  height: 220px;
+}
+.submissionItem .img img {
+  width: 100%;
+  height: 100%;
+}
+.submissionItem .data {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  color: whitesmoke;
+}
+
+.submissionItem:hover {
+  border: 2px solid #ccc;
+}
+
+.submissionItem.playing {
+  border: 2px solid #0083CB;
+  background: white;
+}
+
+/*.media { }*/
+/*.media, .bd {overflow:hidden; _overflow:visible; zoom:1;}*/
+/*.media .img {float:left; margin-right: 10px;}*/
+/*.media .img img {display:block;}*/
+
+
+
+.opportunity-view {
+  width: 100%;
+  height: 100%;
+}
+.left-column {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 230px;
+}
+
+.artworkImg {
+  max-width: 150%;
+}
+#PlayerContainer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.submissions-container {
+  z-index: 1;
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 230px;
+  overflow: auto;
+}
+.submissions-container .submissionItem {
+  margin-left: 3px;
+}
+
+html, body, #Stage {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font: 15px/1.6 "Helvetica Nueue", Helvetica;
+}
+
+// basestyles
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+
+.hide {
+  display: none;
+}
